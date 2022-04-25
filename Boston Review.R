@@ -177,4 +177,3 @@ barplot(colSums(s),
 #Whereas most of the positive sentiments like joy and trust are high, which makes it a positively inclined sentiment.
 
 #Now we'll do the same analysis for 10 more properties, (the top 10 with most number of reviews) and visualize our results in Tableau.
-
