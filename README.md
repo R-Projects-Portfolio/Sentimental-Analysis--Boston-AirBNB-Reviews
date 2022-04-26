@@ -65,7 +65,7 @@ So we found out that the sentiment for the property with listing_id = '66288' is
 
 Now we'll do the same analysis for 10 more properties, (the top 10 with most number of reviews) and visualize our results in Tableau.
 
-[Tableau Visulization of properties with most reviews,Top 10](https://public.tableau.com/app/profile/daniya.qureshi/viz/SentimentAnalysis-BostonAirBNBReviews/AirBNBLisitings)
+[Tableau Visulization of properties with most reviews (Top 10)](https://public.tableau.com/app/profile/daniya.qureshi/viz/SentimentAnalysis-BostonAirBNBReviews/AirBNBLisitings)
 
 ![Tableau Viz](https://user-images.githubusercontent.com/97380339/165324319-bd43f597-8140-43ab-b237-e62067669c2c.png)
 
