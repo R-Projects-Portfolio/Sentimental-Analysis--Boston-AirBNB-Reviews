@@ -102,19 +102,19 @@ term_doc <- TermDocumentMatrix(reviews)
 tdm <- as.matrix(term_doc)
 
 #Let's view the first 10 rows and 5 columns of tdm.
-tdm[1:10, 1:5]  #each row represents each word that appears in the reviews, and each coloumn represents how many times in a document does that word come.
+tdm[1:10, 1:5]  #each row represents each word that appears in the reviews, and each coloumn represents how many times in a document does that word comes.
 #So like the word 'close' comes  1 time in the first review, 0 times the in the 2nd, 3rd, 4th and 5th.
 
 
 #Bar plot of words
 w <- rowSums(tdm)
 
-#Now we'll subset this for only those words which occir more than 10 times.
+#Now we'll subset this for only those words which occur more than 10 times.
 w_1 <- subset(w, w>=25)
 w_1
-
+s_w_1 <- sort(w_1)
 #Let's plot it.
-barplot(w_1, las = 2, col = "lightblue")
+barplot(s_w_1, las = 2, col = "lightblue")
 
 #So as we can see words like sean, and place occur more than 400 times but don't provide any sentiment so we'll remove them.
 corpus_8 <- tm_map(corpus_7, removeWords, c("sean", "place", "boston", "stay", "seans", "location", "host", "also", "even", "experience", "night", "stayed", "apartment", "youre", "can", "located", "studio", "room", "just", "one", "two"))
@@ -137,7 +137,7 @@ word_cloud <- wordcloud(words = names(w_5),
                         random.order = T,
                         min.freq = 5,
                         colors = brewer.pal(8, "Dark2"),
-                        scale = c(3, 0.3))
+                        scale = c(4, 0.4))
 
 #Now let's obtain sentiment scores.
 sentiment_data <- iconv(df_2$comments)
@@ -173,7 +173,8 @@ barplot(colSums(s),
         ylab = 'Count',
         main = 'Sentiment')
 
-#So we can see that most of the negative sentiments like anger, disgust, and sadness are pretty low.
-#Whereas most of the positive sentiments like joy and trust are high, which makes it a positively inclined sentiment.
+#So we can see that the scores for most of the negative sentiments like anger, disgust, and sadness are pretty low.
+#Whereas most of the positive sentiments like joy and trust have high scores, which makes it a positively inclined sentiment.
 
 #Now we'll do the same analysis for 10 more properties, (the top 10 with most number of reviews) and visualize our results in Tableau.
+
